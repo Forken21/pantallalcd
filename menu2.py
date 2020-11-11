@@ -4,7 +4,7 @@
 import os
 import time
 
-#probando
+#probando2
 def menu():
     os.system('clear')
     print
