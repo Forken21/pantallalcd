@@ -29,9 +29,9 @@ def menu():
 
 while True:
     menu()
-    opcionMenu = input("    Inserte el numero de la opcion: ")
+    menuopc = input("    Inserte el numero de la opcion: ")
 
-    if opcionMenu == 1 :
+    if menuopc == 1 :
         def menulcd():
             os.system('clear')
             print
@@ -55,9 +55,9 @@ while True:
 
             while True:
                 menulcd()
-                opcionMenu = input("    Inserte el numero de la opcion: ")
+                opcionlcd = input("    Inserte el numero de la opcion: ")
                             
-                if opcionMenu == 1 :
+                if opcionlcd == 1 :
                     print("")
                     print("ACTUALIAZACION DEL SISTEMA")
                     os.system('sudo apt-get update -y')
@@ -70,7 +70,7 @@ while True:
                     input()
                     time.sleep(5)
 
-                elif opcionMenu ==  2 :
+                elif opcionlcd ==  2 :
                     print("")
                     print("INSTALACION AUTOMATICA LCD")
                     print(" ---> Se Reiniciará <---  ")
@@ -122,7 +122,7 @@ while True:
                     time.sleep(5)
                     os.system('sudo reboot')
 
-                elif opcionMenu ==  3 :
+                elif opcionlcd ==  3 :
                     print("")
                     print("   INSTALACION LCD    ")
                     print("---> Sin reinicio <---")
@@ -146,7 +146,7 @@ while True:
                     print("Pulsa ENTER para continuar...")
                     input()
 
-                elif opcionMenu ==  4 :
+                elif opcionlcd ==  4 :
                     print("")
                     print("   INSTALACION DRIVE    ")
                     print("---> Sin reinicio <---  ")
@@ -169,7 +169,7 @@ while True:
                     print("PARA QUE LOS CAMBIOS TENGAN EFECTOS, SE DEBE REINICIAR")
                     input()
 
-                elif opcionMenu ==  5 :
+                elif opcionlcd ==  5 :
                     print("")
                     print(" DE LCD A HDMI")
                     print("Se debe reiniciar para que los cambios surtan efectos")
@@ -186,7 +186,7 @@ while True:
                     print("Pulsa ENTER para continuar...")
                     input()
 
-                elif opcionMenu ==  6 :
+                elif opcionlcd ==  6 :
                     print("")
                     print(" DE HDMI A LCD")
                     print("Se debe reiniciar para que los cambios surtan efectos.")
@@ -201,7 +201,7 @@ while True:
                     print("Pulsa ENTER para continuar...")
                     input()
 
-                elif opcionMenu ==  7 :
+                elif opcionlcd ==  7 :
                     print("")
                     print(" EN PROCESO DE CONSTRUCCION ")
                     print(" INSTALACION DEL TOUCHUI ")
@@ -212,18 +212,34 @@ while True:
                     print("Pulsa ENTER para continuar...")
                     input()
 
-                elif opcionMenu ==  8 :
+                elif opcionlcd ==  8 :
                     print("")
                     print(" EN PROCESO DE CONSTRUCCION ")
                     #print("--> INSTALACION COMPLETADA <--")
 
-                elif opcionMenu ==  9 :
+                elif opcionlcd ==  9 :
                     print("REINICIANDO")
                     time.sleep(5)
                     os.system('sudo reboot')
 
-                elif opcionMenu ==  0 :
+                elif opcionlcd ==  0 :
                     break
 
                 else:
                     input("No has elegido ninguna opcion...ESPABILAO!!")
+
+    else menuopc == 2:
+        def menudiscoduro():
+            os.system('clear')
+            print
+            print("")
+            print("--------------------------------")
+            print("        MENU DISCO DURO         ")
+            print("--------------------------------")
+            print("")
+            print("     Selecciona una opcion:")
+            print("\t1 - Formatear Disco Duro")
+            print("\t2 - Montando Disco Duro")
+            print("\t3 - Atras")
+            print("\t4 - Salir")
+            print("")
