@@ -5,6 +5,7 @@ import os
 import time
 import requests
 
+
 tiempo = requests.get('https://wttr.in/San_Fernando,Spain?format="%l:+%c+%t+%m+Viento+%w"\n')
 
 def menu():
