@@ -277,8 +277,7 @@ def menulcd():
     else:
         print("No has elegido ninguna opcion")
         principal()
-  
-   
+        
 def menudiscoduro():
     os.system('clear')
     print
