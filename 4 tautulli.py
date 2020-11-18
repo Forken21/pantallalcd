@@ -1,5 +1,5 @@
 sudo apt-get install transmission-daemon
- Configuramos Transmission
+Configuramos Transmission
  sudo service transmission-daemon stop
  cd /etc
 cd transmission-daemon
