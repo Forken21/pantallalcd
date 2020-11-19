@@ -1,11 +1,18 @@
 sudo apt-get install transmission-daemon
-Configuramos Transmission
- sudo service transmission-daemon stop
- cd /etc
-cd transmission-daemon
- sudo nano settings.json
+print("Configuramos Transmission")
+os.system('sudo service transmission-daemon stop')
+os.system('cd /etc')
+os.system('cd transmission-daemon')
+print("  VAMOS A CONFIGURAR EL ARCHIVO SETTING.JSON ")
+print(" Este proceso se tiene que hacer manual, asi que se explica todo con mayor detalla posible")
+print(" Se cambiaran algunas lineas:   ")
+print("...Emepezamos...")
+print(" 1.-Indicar la carpeta que esta puesta en RED para las descargas de archivos. Para esto vamos a cambiar la siguiente linea:  ")
+print('	- "download-dir": "/mnt/usb/descargas" (¡¡¡OJO!!! CON LOS SIGNOS DE PUNTUACION!!) ')
+print(" 2.-
+ 
 
-
+"""
 Si miramos dentro de esa carpeta (con el comando «ls») sólo nos encontraremos un archivo «Readme» y un archivo llamado «settings.json». Efectivamente, el archivo que hay que editar es ese último, así que tecleamos esto para editarlo:
 
 sudo nano settings.json
@@ -73,3 +80,7 @@ Acceso por el interfaz web
 Ahora ya deberíamos poder acceder a nuestro Transmission así que, desde un navegador de nuestro ordenador, vamos a acceder a la siguiente dirección (cambiad la IP por la de vuestra raspberry):
 
 http://10.0.1.222:9091
+      """
+      
+      sudo nano settings.json
+      
