@@ -11,7 +11,7 @@ def principal():
     os.system('clear')
     print("")
     print("")
-    print("El tiempo que hace ahora...:"+tiempo.text)
+    print("El tiempo que hace ahora..."+tiempo.text)
     print("")
     print("--------------------------------")
     print("         MENU PRINCIPAL         ")
@@ -49,7 +49,7 @@ def principal():
         print("no has elegido ninguna opcion")
         principal()
    
-def menulcd():
+def menulcd(): #Menu LCD
     os.system('clear')
     print
     print("")
@@ -69,11 +69,13 @@ def menulcd():
     print("\t9 - Instalar OctoDash")
     print("\t10 - Actualizar OctoDash")
     print("\t11 - Reiniciar")
+    print("\t12 - Atras")
     print("\t0 - Salir")
     print("")
 
     set_menu = int(input(menu))
-    if set_menu == 1:
+    
+    if set_menu == 1: #Actualizar Sistema
         print("")
         print("ACTUALIAZACION DEL SISTEMA")
         os.system('sudo apt-get update -y')
@@ -87,7 +89,7 @@ def menulcd():
         time.sleep(5)
         menulcd()
 
-    elif set_menu ==2:
+    elif set_menu ==2: #Instalacion AUTOMATICA LCD (Se Reiniciara)
         print("")   
         print("INSTALACION AUTOMATICA LCD")
         print(" ---> Se Reiniciará <---  ")
@@ -139,7 +141,7 @@ def menulcd():
         os.system('sudo reboot')
         menulcd()
     
-    elif set_menu == 3:
+    elif set_menu == 3: #Instalador LCD (Sin Reinicio)
         print("")
         print("   INSTALACION LCD    ")
         print("---> Sin reinicio <---")
@@ -164,7 +166,7 @@ def menulcd():
         input()
         menulcd()
 
-    elif set_menu == 4:
+    elif set_menu == 4: #Instalador Driver LCD (Sin reinicio)
         print("")
         print("   INSTALACION DRIVE    ")
         print("---> Sin reinicio <---  ")
@@ -188,7 +190,7 @@ def menulcd():
         input()
         menulcd()
 
-    elif set_menu == 5:
+    elif set_menu == 5: #Cambiar de LCD a HDMI
         print("")
         print(" DE LCD A HDMI")
         print("Se debe reiniciar para que los cambios surtan efectos")
@@ -206,7 +208,7 @@ def menulcd():
         input()
         menulcd()
 
-    elif set_menu == 6:
+    elif set_menu == 6: #Cambiar de HDMI a LCD
         print("")
         print(" DE HDMI A LCD")
         print("Se debe reiniciar para que los cambios surtan efectos.")
@@ -222,7 +224,7 @@ def menulcd():
         input()
         menulcd()
 
-    elif set_menu == 7:
+    elif set_menu == 7: #Instalar TouchUI (Automatico)
         print("")
         print(" INSTALACION DEL TOUCHUI ")
         print("Se debe continuar para que los cambios surtan efectos...")
@@ -234,7 +236,7 @@ def menulcd():
         input()
         menulcd()
 
-    elif set_menu == 8:
+    elif set_menu == 8: #Reinstalar TouchUI
         print("")
         print(" EN PROCESO DE CONSTRUCCION ")
         #print("--> INSTALACION COMPLETADA <--")
@@ -242,7 +244,7 @@ def menulcd():
         input()
         menulcd()
 
-    elif set_menu == 9:
+    elif set_menu == 9: #Instalar OctoDash
         print("")
         print(" INSTALACION DE OCTODASH")
         print("Se debe continuar para que los cambios surtan efectos.")
@@ -255,7 +257,7 @@ def menulcd():
         input()
         menulcd()
 
-    elif set_menu == 10:
+    elif set_menu == 10: #Actualizar OctoDash
         print("")
         print(" ACTUALIAZACION DE OCTODASH")
         print("Se debe continuar para que los cambios surtan efectos.")
@@ -268,19 +270,22 @@ def menulcd():
         input()
         menulcd()
 
-    elif set_menu == 11:
+    elif set_menu == 11: #Reiniciar
         print("REINICIANDO")
         time.sleep(5)
         os.system('sudo reboot')
+    
+    elif set_menu == 12: #Atras
+        principal()
 
-    elif set_menu == 0:
+    elif set_menu == 0: #Salir
         return
     
     else:
         print("No has elegido ninguna opcion")
-        principal()
+        menulcd()
         
-def menudiscoduro():
+def menudiscoduro(): #Menu Disco Duro
     os.system('clear')
     print
     print("")
@@ -296,7 +301,7 @@ def menudiscoduro():
     print("")
 
     set_menu = int(input(menu))
-    if set_menu == 1:
+    if set_menu == 1: #Fprmatear Disco Duro
         print("")
         print("FORMATEAR DISCO DURO A EXT4")
         print("...Se llamará: >> unidadusb <<")
@@ -312,7 +317,7 @@ def menudiscoduro():
         time.sleep(5)
         menudiscoduro()
 
-    elif set_menu ==2:
+    elif set_menu ==2: #Montar Disco Duro
         print("")
         print("MONTANDO DISCO DURO")
         print("...montando Disco Duro...")
@@ -325,10 +330,10 @@ def menudiscoduro():
         time.sleep(5)
         menudiscoduro()
 
-    elif set_menu == 3:
+    elif set_menu == 3: #Atras
         principal()
     
-    elif set_menu == 0:
+    elif set_menu == 0: #Salir
         return
 
     else:
@@ -350,7 +355,7 @@ def menuplex():
     print("")
 
     set_menu = int(input(menu))
-    if set_menu == 1:
+    if set_menu == 1: #Instalar Plex
         print("")
         print ("INSTALACION PLEX")
         time.sleep(2)
@@ -374,17 +379,17 @@ def menuplex():
         time.sleep(5)
         menuplex()
 
-    elif set_menu == 2:
+    elif set_menu == 2: #Atras
         principal()
     
-    elif set_menu == 0:
+    elif set_menu == 0: #Salir
         return
 
     else:
         print("no has elegido ninguna opcion")
         menuplex() 
        
-def menutransmission():
+def menutransmission(): #Menu Transmission
     os.system('clear')
     print
     print("")
@@ -399,7 +404,7 @@ def menutransmission():
     print("")
 
     set_menu = int(input(menu))
-    if set_menu == 1:
+    if set_menu == 1: #Insstalar Transmission
         print("")
         print("INSTALACION TRANSMISSION")
         time.sleep(3)
@@ -471,10 +476,10 @@ def menutransmission():
         input()
         menutransmission()
 
-    elif set_menu == 2:
+    elif set_menu == 2: #Atras
         principal()
     
-    elif set_menu == 0:
+    elif set_menu == 0: #Salir
         return
 
     else:
