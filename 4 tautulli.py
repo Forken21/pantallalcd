@@ -1,86 +1,68 @@
-sudo apt-get install transmission-daemon
+print("")
+print("INSTALACION TRANSMISSION")
+time.sleep(3)
+print("...Bajando archivos necesario e instalando...")
+os.system('sudo apt-get install transmission-daemon')
 print("Configuramos Transmission")
 os.system('sudo service transmission-daemon stop')
 os.system('cd /etc')
 os.system('cd transmission-daemon')
 print("  VAMOS A CONFIGURAR EL ARCHIVO SETTING.JSON ")
-print(" Este proceso se tiene que hacer manual, asi que se explica todo con mayor detalla posible")
+print(" Este proceso se tiene que hacer manual, asi que se explica todo con el mayor detalle posible")
+time.sleep(1)
 print(" Se cambiaran algunas lineas:   ")
+time.sleep(1)
 print("...Emepezamos...")
+time.sleep(1)
 print(" 1.-Indicar la carpeta que esta puesta en RED para las descargas de archivos. Para esto vamos a cambiar la siguiente linea:  ")
+time.sleep(1)
 print('	- "download-dir": "/mnt/usb/descargas" (¡¡¡OJO!!! CON LOS SIGNOS DE PUNTUACION!!) ')
-print(" 2.-
- 
-
-"""
-Si miramos dentro de esa carpeta (con el comando «ls») sólo nos encontraremos un archivo «Readme» y un archivo llamado «settings.json». Efectivamente, el archivo que hay que editar es ese último, así que tecleamos esto para editarlo:
-
-sudo nano settings.json
-Vamos a cambiar algunas líneas. En primer lugar nos interesa cambiar el directorio al que van a ir las descargas que hagamos. En el tutorial de aMule habíamos creado una carpeta dentro de la carpeta «home» del usuario «pi». La ruta era ésta.
-
-/home/pi/descargas
-Esa carpeta la habíamos compartido en la red para poder acceder a ella de forma sencilla, así que vamos a aprovecharla para usarla también como carpeta de descargas del Transmission. Si no habéis seguido ese tutorial, os recomiendo que al menos leáis esa parte para tener todo bien configurado.
-
-Al lío que me estoy yendo por las ramas. Estábamos editando el archivo settings.json para decirle al Transmission que todo lo que descargue lo deje en la carpeta que tenemos compartida. En ese archivo, Buscamos una línea que pone «download-dir» y la cambiamos por la siguiente:
-
-"download-dir": "/home/pi/descargas",
-Mucho ojo con los signos de puntuación. No quitéis la coma del final ni ninguna de las comillas.
-
-También vamos a buscar una línea que pone
-
-"incomplete-dir-enabled": false,
-Y la cambiamos por esto:
-
-"incomplete-dir-enabled": true,
-Ahora haremos algo similar a lo que hicimos en el amule. Vamos a crear un usuario y una contraseña para poder acceder a nuestro Transmission desde otro ordenador, ya sea desde una página web o desde una aplicación propia. Vamos a buscar la línea que empieza por:
-
-"rpc-password": 
-y vamos a poner la contraseña con la que queramos acceder al Transmission. Elegid siempre una contraeña segura, que no hayáis usado en otras aplicaciones y que sea lo suficientemente complicada como para ponérselo difícil a quién la quiera averiguar. Yo voy a poner «ElSoftLibreMola1000», pero por favor, vosotros usad una contraseña distinta y segura. Voy a dejar la línea tal que así:
-
-"rpc-password": "ElSoftLibreMola1000",
-Un poco más abajo nos pregunta por el nombre de usuario y nos sugiere uno. Vamos a cambiarlo por un usuario o un nick nuestro. Yo voy a poner «ironman» como ejemplo, pero os ruego que pongáis un nombre de usuario diferente (y divertido, por favor).
-
-"rpc-username": "ironman",
-Ahora vamos a asignar un puerto para realizar las descargas (algo similar a lo que hicimos con aMule). Transmission por defecto usa el 51413, pero como no nos interesa ir por el puerto estandard (por si nuestro proveedor de internet capa el tráfico en ese puerto) vamos a cambiarlo por otro, por ejemplo el 51228 (pero podéis poner un número cualquiera entre el 49152 y el 65535). Para ello tenemos que buscar la línea que pone:
-
-"peer-port": 51413,
-Y cambiarla por esta otra
-
-"peer-port": 51228,
-… pero lo dicho: poned un número cualquiera entre ese rango.
-
-Ahora debemos editar una línea más. Transmission por defecto bloquea todas las conexiones de cualquier ordenador que quiera conectarse con su interfaz, salvo que estén en una «lista blanca». A nosotros nos interesa poder acceder desde diferentes IP’s, así que vamos a anular esta configuración. Para ello vamos a buscar esta línea
-
-"rpc-whitelist-enabled": true,
-Y la vamos a cambiar por esta otra:
-
-"rpc-whitelist-enabled": false,
-Por último vamos a hacer otros dos cambios más. Al igual que pasó con el aMule, nos interesa limitar la velocidad de subida y bajada para no saturar nuestra conexión a internet y para no saturar el procesador de la propia Raspberry. Vamos a limitarla a 1900 Kb/Seg. de bajada y a 900 Kb/Seg. de subida. Habrá a quién le parezca poca velocidad. A mi, con una línea 100/10 me va genial así. Además así dejo el ancho de banda de mi hogar libre para otros menesteres, ya que de nada sirve poner aquí un montón de velocidad, y luego, cuando vayamos a ver un vídeo en una página de streaming, que el vídeo vaya a pedales. Vamos a empezar buscando en el archivo de configuración estas dos líneas:
-
-"speed-limit-down": 100,
-"speed-limit-down-enabled": false,
-Y vamos a cambiarlas por estas otras:
-
-"speed-limit-down": 1900,
-"speed-limit-down-enabled": true,
-Ahora vamos a modificar la velocidad de subida. Buscamos estas líneas:
-
-"speed-limit-up": 100,
-"speed-limit-up-enabled": false,
-Y vamos a cambiarlas por estas otras.
-
-"speed-limit-up": 900,
-"speed-limit-up-enabled": true,
-Una vez hecho esto, podemos volver a encender el servicio del Transmission con el siguiente comando:
-
-sudo service transmission-daemon start
-
-
-Acceso por el interfaz web
-Ahora ya deberíamos poder acceder a nuestro Transmission así que, desde un navegador de nuestro ordenador, vamos a acceder a la siguiente dirección (cambiad la IP por la de vuestra raspberry):
-
-http://10.0.1.222:9091
-      """
-      
-      sudo nano settings.json
-      
+time.sleep(3)
+print(" 2.- Buscamos otra linea y cambiamos:  ")
+time.sleep(1)
+print('     - "incomplete-dir-enabled": false," y lo cambiamos por ""incomplete-dir-enabled": false, ')
+time.sleep(3)
+print(" 3.- Lo siguiente sería ponerle contraseña, para acceder a Transmission.")
+time.sleep(1)
+print("     Buscamos la siguiente linea y le añadimos la contraseña")
+time.sleep(1)
+print('     - "rpc-password":   y la cambiamos de la siguiente forma "rpc-password": "MiContraseña", ')
+time.sleep(3)
+print(" 4.- Un poco mas abajo nos pregunta por el nombre de usuario, nos sugiere uno... lo cambiamos a nuestro gusto")
+time.sleep(1)
+print('     "rpc-username": "ironman", ')
+time.sleep(3)
+print(" 5.- Ahora vamos a modificar el puerto, sería conveniente modificar el mismo puerto en el router, para tenerlo abierto")
+time.sleep(1)
+print('     - "peer-port": 51413,  y modificamos el puerto al que mas nos interese.')
+time.sleep(3)
+print(" 6.- Ahora debemos editar una línea más. Transmission por defecto bloquea todas las conexiones de cualquier ordenador que quiera conectarse con su interfaz, salvo que estén en una «lista blanca». A nosotros nos interesa poder acceder desde diferentes IP’s, así que vamos a anular esta configuración. Para ello vamos a buscar esta línea")
+print('     - "rpc-whitelist-enabled": true, Y la vamos a cambiar por esta otra: "rpc-whitelist-enabled": false, ')
+time.sleep(3)
+print("")
+time.sleep(1)
+print("Habríamos terminado ya la instalacion de Transmission, solo nos toca guardar el archivo modificado y encender Transmmision")
+time.sleep(1)
+print("Vamos a modificar el archivo")
+time.sleep(1)
+print(" Espero que hayan apuntado todo, sino... te toca leer este tocho otra vez")
+time.sleep(1)
+print("Pulsa ENTER para continuar...")
+input()
+print("")
+time.sleep(1)
+print("...Abrimos el archivo para modificarlo...")
+os.system('sudo nano settings.json')
+print("YA LO HEMOS MODIFICADO!!")
+time.sleep(1)
+print("Ahora vamos a encender Transmission")
+os.system('sudo service transmission-daemon start')
+print("")
+time.sleep(1)
+print("LISTO!!!, ya puedes utilizarlo entrando en el navegador en:")
+time.sleep(1)
+print("La direccion es: ","http://", ip,":9091")
+time.sleep(5)
+print("...Pusla ENTER para volver al Menu...")
+input()
+principal()
